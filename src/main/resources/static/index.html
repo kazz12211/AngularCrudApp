@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width" />
+<meta charset="UTF-8">
+<title></title>
+<script src="//d5wfroyti11sa.cloudfront.net/prod/client/ts-7.0.0-alpha.29.min.js"></script>
+<script src="webjars/angularjs/1.6.2/angular.js"></script>
+<script src="scripts/app.js"></script>
+<script src="scripts/home.controller.js"></script>
+<link rel="stylesheet" href="styles/style.css">
+
+</head>
+<body ng-app="app" ng-controller="homeController">
+<header data-ts="TopBar" id="home-topbar"></header>
+<main data-ts="Main">
+<div data-ts="MainContent">
+	<div id="tab0" ng-show="showTab == 0">
+		<div style="width:170px;margin-left:auto;padding:4px 0px 4px 4px">
+		<button data-ts="Button" class="ts-primary" ng-click="newMode()">
+			<span>New Customer</span>
+		</button>
+		</div>
+		<div data-ts="Table" id="customer-table"></div>
+		<div ng-show="editMode == 0 && selectedCustomer != null" style="padding: 4px 4px 4px 4px;width:320px">
+			<div data-ts="Note">
+				<p>Edit data and update database record</p>
+			</div>
+			<form data-ts="Form" ng-submit="updateCustomer()">
+				<fieldset>
+					<span>Name</span>
+					<input type="text" ng-model="selectedCustomer.name" />
+				</fieldset>
+				<fieldset>
+					<span>Email</span>
+					<input type="text" ng-model="selectedCustomer.email"/>
+				</fieldset>
+				<fieldset>
+					<span>Age</span>
+					<input type="text" ng-model="selectedCustomer.age" />
+				</fieldset>
+				<br />
+				<button data-ts="Button" class="ts-primary" type="submit">
+					<span>Update record</span>
+				</button>
+			</form>
+		</div>
+		<div ng-show="editMode == 1" style="padding: 4px 4px 4px 4px;width:320px">
+			<div data-ts="Note">
+				<p>Enter data and insert new database record</p>
+			</div>
+			<form data-ts="Form" ng-submit="addCustomer()">
+				<fieldset>
+					<span>Name</span>
+					<input type="text" ng-model="newCustomer.name" />
+				</fieldset>
+				<fieldset>
+					<span>Email</span>
+					<input type="text" ng-model="newCustomer.email"/>
+				</fieldset>
+				<fieldset>
+					<span>Age</span>
+					<input type="text" ng-model="newCustomer.age" />
+				</fieldset>
+				<br />
+				<button data-ts="Button" class="ts-primary" type="submit">
+					<span>Insert new record</span>
+				</button>
+			</form>
+		</div>
+	</div>
+	<div id="tab1" ng-show="showTab == 1">
+		<div data-ts="Table" id="sales-table"></div>
+	</div>
+</div>
+</main>
+</body>
+</html>

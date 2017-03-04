@@ -1,0 +1,29 @@
+ Search:
+<input type="text" placeholder="Search customer" ng-model="searchText">
+<div style="float: right; padding-bottom: 8px; padding-top: 8px">
+	<input type="button" onclick="location.href='add'" value="Add" />
+</div>
+<table class="dataTable" width="100%">
+	<thead>
+		<tr>
+			<th ng-click="sortData('name')">Name
+				<div ng-class="sortClass('name')"></div>
+			</th>
+			<th ng-click="sortData('email')">Email
+				<div ng-class="sortClass('email')"></div>
+			</th>
+			<th ng-click="sortData('age')">Age
+				<div ng-class="sortClass('age')"></div>
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr
+			ng-repeat="customer in customers | filter:searchText | orderBy:sortColumn:reverseOrder">
+			<td>{{ customer.name }}</td>
+			<td>{{ customer.email }}</td>
+			<td align="right">{{ customer.age | number}}</td>
+		</tr>
+	</tbody>
+	"
+</table>

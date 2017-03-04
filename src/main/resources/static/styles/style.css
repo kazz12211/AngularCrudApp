@@ -1,0 +1,76 @@
+table.dataTable {
+	border-collapse: collapse;
+	text-align: left;
+    line-height: 1.5;
+    border-left: 1px solid #ccc;
+}
+
+table.dataTable thead th {
+    padding: 10px;
+    font-weight: bold;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 2px solid #c00;
+    background: #dcdcd1;
+}
+
+table.dataTable tbody th {
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background: #ececec;
+}
+
+table.dataTable td {
+    padding: 10px;
+    vertical-align: top;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+table.dataTable tr:hover {
+	background-color:#ffff99;
+}
+
+table.formTable {
+	border-collapse: collapse;
+	text-align: left;
+    line-height: 1.5;
+    border-left: 1px solid #ccc;
+}
+table.formTable tbody th {
+    padding: 10px;
+    font-weight: bold;
+    border-top: 1px solid #ccc;
+    border-right: 2px solid #c00;
+    border-bottom: 1px solid #ccc;
+    background: #dcdcd1;
+}
+
+table.formTable td {
+    padding: 10px;
+    vertical-align: top;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+
+.arrow-up {
+	width:0;
+	height:0;
+	border-left:5px solid transparent;
+	border-right:5px solid transparent;
+	border-bottom: 10px solid black;
+	display:inline-block;
+}
+
+.arrow-down {
+	width:0;
+	height:0;
+	border-left:5px solid transparent;
+	border-right:5px solid transparent;
+	border-top: 10px solid black;
+	display:inline-block;
+}
