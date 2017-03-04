@@ -1,1 +1,5 @@
 # AngularCrudApp
+
+AngularJSとTSコンポーネントを組み合わせてクライアントサイド
+Spring BootでJPAを使ってMySQLにアクセスするサーバーサイド。
+クライアントとサーバーはREST APIを使ってデータを交換する。
