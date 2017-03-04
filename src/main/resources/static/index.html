@@ -22,7 +22,7 @@
 		</button>
 		</div>
 		<div data-ts="Table" id="customer-table"></div>
-		<div ng-show="editMode == 0 && selectedCustomer != null" style="padding: 4px 4px 4px 4px;width:320px">
+		<div ng-show="editMode == 0 && selectedCustomer != null" style="padding: 4px 4px 4px 4px;width:400px">
 			<div data-ts="Note">
 				<p>Edit data and update database record</p>
 			</div>
@@ -43,9 +43,12 @@
 				<button data-ts="Button" class="ts-primary" type="submit">
 					<span>Update record</span>
 				</button>
+				<button data-ts="Button" class="ts-secondary" ng-click="deleteCustomer()">
+					<span>Delete this record</span>
+				</button>
 			</form>
 		</div>
-		<div ng-show="editMode == 1" style="padding: 4px 4px 4px 4px;width:320px">
+		<div ng-show="editMode == 1" style="padding: 4px 4px 4px 4px;width:400px">
 			<div data-ts="Note">
 				<p>Enter data and insert new database record</p>
 			</div>

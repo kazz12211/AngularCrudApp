@@ -35,7 +35,8 @@ public class WebController {
 	
 	@PostMapping("/addCustomer")
 	@ResponseBody
-	public Customer addCustomer(@RequestBody Map newCustomer) {
+	public Customer addCustomer(@RequestBody Map<String, Object> newCustomer) {
+		System.out.println("Inserting");
 		System.out.println(newCustomer);
 		Customer cust = new Customer();
 		cust.setName((String) newCustomer.get("name"));
@@ -47,7 +48,8 @@ public class WebController {
 	
 	@PostMapping("/updateCustomer")
 	@ResponseBody
-	public Customer updateCustomer(@RequestBody Map editingCustomer) {
+	public Customer updateCustomer(@RequestBody Map<String, Object> editingCustomer) {
+		System.out.println("Updating");
 		System.out.println(editingCustomer);
 		Long id = Long.valueOf(editingCustomer.get("id").toString());
 		Customer cust = customerRepository.findOne(id);
@@ -59,5 +61,16 @@ public class WebController {
 			return cust;
 		}
 		return null;
+	}
+	
+	@PostMapping("/deleteCustomer")
+	@ResponseBody
+	public Map<String, Object> deleteCustomer(@RequestBody Map<String, Object> customer) {
+		System.out.println("Deleting");
+		System.out.println(customer);
+		Long id = Long.valueOf(customer.get("id").toString());
+		customerRepository.delete(id);
+		return customer;
+		
 	}
 }

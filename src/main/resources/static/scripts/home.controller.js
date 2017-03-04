@@ -111,6 +111,19 @@ app.controller("homeController", function($scope, $req, $window, $q) {
        	});
         };
         
+        $scope.deleteCustomer = function() {
+        	$q.all([
+            	    $req.deleteCustomer($scope.selectedCustomer),
+            	    $req.getCustomers()
+            	])
+            	.then(function(response) {
+            		console.log(response[0].data);
+        			$scope.customers = response[1].data;
+        			populateCustomerTable($scope.customers);
+         			$scope.$apply();
+           	});
+        };
+        
         function populateCustomerTable(customers) {
 	    	var rows = [];
 	    	for(var i = 0; i < customers.length; i++) {
