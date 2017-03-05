@@ -22,7 +22,7 @@
 		</button>
 		</div>
 		<div data-ts="Table" id="customer-table"></div>
-		<div ng-show="editMode == 0 && selectedCustomer != null" style="padding: 4px 4px 4px 4px;width:400px">
+		<div ng-show="editMode == 0 && selectedCustomer != null" style="padding: 4px 4px 4px 4px;width:380px">
 			<div data-ts="Note">
 				<p>Edit data and update database record</p>
 			</div>
@@ -33,11 +33,11 @@
 				</fieldset>
 				<fieldset>
 					<span>Email</span>
-					<input type="text" ng-model="selectedCustomer.email"/>
+					<input type="mail" ng-model="selectedCustomer.email"/>
 				</fieldset>
 				<fieldset>
 					<span>Age</span>
-					<input type="text" ng-model="selectedCustomer.age" />
+					<input type="number" ng-model="selectedCustomer.age" />
 				</fieldset>
 				<br />
 				<button data-ts="Button" class="ts-primary" type="submit">
@@ -48,7 +48,7 @@
 				</button>
 			</form>
 		</div>
-		<div ng-show="editMode == 1" style="padding: 4px 4px 4px 4px;width:400px">
+		<div ng-show="editMode == 1" style="padding: 4px 4px 4px 4px;width:380px">
 			<div data-ts="Note">
 				<p>Enter data and insert new database record</p>
 			</div>
@@ -59,11 +59,11 @@
 				</fieldset>
 				<fieldset>
 					<span>Email</span>
-					<input type="text" ng-model="newCustomer.email"/>
+					<input type="mail" ng-model="newCustomer.email"/>
 				</fieldset>
 				<fieldset>
 					<span>Age</span>
-					<input type="text" ng-model="newCustomer.age" />
+					<input type="number" ng-model="newCustomer.age" />
 				</fieldset>
 				<br />
 				<button data-ts="Button" class="ts-primary" type="submit">
