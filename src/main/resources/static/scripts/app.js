@@ -27,6 +27,9 @@ app.factory('$req', function($http, $location) {
 		},
 		deleteCustomer : function(data) {
 			return $http.post(url + "deleteCustomer", data);
+		},
+		updateSale : function(data) {
+			return $http.post(url + "updateSale", data);
 		}
 	}
 });

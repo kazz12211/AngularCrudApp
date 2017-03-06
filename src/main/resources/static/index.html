@@ -4,7 +4,8 @@
 <meta name="viewport" content="width=device-width" />
 <meta charset="UTF-8">
 <title></title>
-<script src="//d5wfroyti11sa.cloudfront.net/prod/client/ts-7.0.0-alpha.29.min.js"></script>
+<script
+	src="//d5wfroyti11sa.cloudfront.net/prod/client/ts-7.0.0-alpha.29.min.js"></script>
 <script src="webjars/angularjs/1.6.2/angular.js"></script>
 <script src="scripts/app.js"></script>
 <script src="scripts/home.controller.js"></script>
@@ -12,70 +13,119 @@
 
 </head>
 <body ng-app="app" ng-controller="homeController">
-<header data-ts="TopBar" id="home-topbar"></header>
-<main data-ts="Main">
-<div data-ts="MainContent">
-	<div id="tab0" ng-show="showTab == 0">
-		<div style="width:170px;margin-left:auto;padding:4px 0px 4px 4px">
-		<button data-ts="Button" class="ts-primary" ng-click="newMode()">
-			<span>New Customer</span>
-		</button>
-		</div>
-		<div data-ts="Table" id="customer-table"></div>
-		<div ng-show="editMode == 0 && selectedCustomer != null" style="padding: 4px 4px 4px 4px;width:380px">
-			<div data-ts="Note">
-				<p>Edit data and update database record</p>
+	<header data-ts="TopBar" id="home-topbar"></header>
+	<main data-ts="Main">
+	<div data-ts="MainContent">
+		<div id="tab0" ng-show="showTab == 0">
+			<div
+				style="width: 170px; margin-left: auto; padding: 4px 0px 4px 4px">
+				<button data-ts="Button" class="ts-primary" ng-click="newMode()">
+					<span>New Customer</span>
+				</button>
 			</div>
-			<form data-ts="Form" ng-submit="updateCustomer()">
-				<fieldset>
-					<span>Name</span>
-					<input type="text" ng-model="selectedCustomer.name" />
-				</fieldset>
-				<fieldset>
-					<span>Email</span>
-					<input type="mail" ng-model="selectedCustomer.email"/>
-				</fieldset>
-				<fieldset>
-					<span>Age</span>
-					<input type="number" ng-model="selectedCustomer.age" />
-				</fieldset>
-				<br />
-				<button data-ts="Button" class="ts-primary" type="submit">
-					<span>Update record</span>
-				</button>
-				<button data-ts="Button" class="ts-secondary" ng-click="deleteCustomer()">
-					<span>Delete this record</span>
-				</button>
-			</form>
-		</div>
-		<div ng-show="editMode == 1" style="padding: 4px 4px 4px 4px;width:380px">
-			<div data-ts="Note">
-				<p>Enter data and insert new database record</p>
+			<div data-ts="Table" id="customer-table"></div>
+			<div ng-show="editMode == 0 && selectedCustomer != null"
+				style="padding: 4px 4px 4px 4px; width: 380px">
+				<div data-ts="Note">
+					<p>Edit data and update database record</p>
+				</div>
+				<form data-ts="Form" ng-submit="updateCustomer()">
+					<label>
+						<fieldset>
+							<span>Name</span> <input type="text"
+								ng-model="selectedCustomer.name" />
+						</fieldset>
+					</label> <label>
+						<fieldset>
+							<span>Email</span> <input type="mail"
+								ng-model="selectedCustomer.email" />
+						</fieldset>
+					</label> <label>
+						<fieldset>
+							<span>Age</span> <input type="number"
+								ng-model="selectedCustomer.age" />
+						</fieldset>
+					</label> <br />
+					<button data-ts="Button" class="ts-primary" type="submit">
+						<span>Update record</span>
+					</button>
+					<button data-ts="Button" class="ts-secondary"
+						ng-click="deleteCustomer()">
+						<span>Delete this record</span>
+					</button>
+				</form>
 			</div>
-			<form data-ts="Form" ng-submit="addCustomer()">
-				<fieldset>
-					<span>Name</span>
-					<input type="text" ng-model="newCustomer.name" />
-				</fieldset>
-				<fieldset>
-					<span>Email</span>
-					<input type="mail" ng-model="newCustomer.email"/>
-				</fieldset>
-				<fieldset>
-					<span>Age</span>
-					<input type="number" ng-model="newCustomer.age" />
-				</fieldset>
-				<br />
-				<button data-ts="Button" class="ts-primary" type="submit">
-					<span>Insert new record</span>
-				</button>
-			</form>
+			<div ng-show="editMode == 1"
+				style="padding: 4px 4px 4px 4px; width: 380px">
+				<div data-ts="Note">
+					<p>Enter data and insert new database record</p>
+				</div>
+				<form data-ts="Form" ng-submit="addCustomer()">
+					<label>
+						<fieldset>
+							<span>Name</span> <input type="text" ng-model="newCustomer.name" />
+						</fieldset>
+					</label> <label>
+						<fieldset>
+							<span>Email</span> <input type="mail"
+								ng-model="newCustomer.email" />
+						</fieldset>
+					</label> <label>
+						<fieldset>
+							<span>Age</span> <input type="number" ng-model="newCustomer.age" />
+						</fieldset>
+					</label> <br />
+					<button data-ts="Button" class="ts-primary" type="submit">
+						<span>Insert new record</span>
+					</button>
+				</form>
+			</div>
+		</div>
+		<div id="tab1" ng-show="showTab == 1">
+			<div data-ts="Table" id="sales-table"></div>
 		</div>
 	</div>
-	<div id="tab1" ng-show="showTab == 1">
-		<div data-ts="Table" id="sales-table"></div>
-	</div>
-</div>
-</main>
+	</main>
+	<aside data-ts="Aside" id="sales-aside">
+		<div data-ts="Panel">
+			<form data-ts="Form">
+				<label>
+					<fieldset>
+						<span>Sale Date</span> <input type="date"
+							ng-model="selectedSale.saleDate" />
+					</fieldset>
+				</label> <label>
+					<fieldset>
+						<span>Customer</span> <input type="text"
+							ng-model="selectedSaleCustomer" />
+					</fieldset>
+				</label> <label>
+					<fieldset>
+						<span>Product Name</span> <input type="text"
+							ng-model="selectedSale.productName" />
+					</fieldset>
+				</label> <label>
+					<fieldset>
+						<span>Price</span> <input type="number"
+							ng-model="selectedSale.price" />
+					</fieldset>
+				</label> <label>
+					<fieldset>
+						<span>Quantity</span> <input type="number"
+							ng-model="selectedSale.quantity" />
+					</fieldset>
+				</label> <label>
+					<fieldset>
+						<span>Amount</span> <input type="number"
+							value="{{selectedSale.quantity * selectedSale.price }}"
+							disabled="true" />
+					</fieldset>
+				</label> <br />
+				<div data-ts="Button" class="ts-primary" ng-click="updateSale()">
+					<span>Save</span>
+				</div>
+			</form>
+		</div>
+	</aside>
 </body>
 </html>

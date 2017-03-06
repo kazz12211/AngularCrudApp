@@ -1,5 +1,9 @@
 package com.artesware.controller;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -72,5 +76,29 @@ public class WebController {
 		customerRepository.delete(id);
 		return customer;
 		
+	}
+	
+	static private DateFormat DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd'T'hh:mm:ss.S'Z'");
+	
+	@PostMapping("/updateSale")
+	@ResponseBody
+	public Sale updateSale(@RequestBody Map<String, Object> editingSale) {
+		System.out.println("Updating");
+		System.out.println(editingSale);
+		Long id = Long.valueOf(editingSale.get("id").toString());
+		Sale sale = saleRepository.findOne(id);
+		if(sale != null) {
+			try {
+				sale.setSaleDate(DATE_FORMAT.parse(editingSale.get("saleDate").toString()));
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+			sale.setPrice(Double.valueOf(editingSale.get("price").toString()));
+			sale.setProductName((String) editingSale.get("productName"));
+			sale.setQuantity(Integer.valueOf(editingSale.get("quantity").toString()));
+			saleRepository.save(sale);
+			return sale;
+		}
+		return null;
 	}
 }
