@@ -6,6 +6,11 @@
 - クライアントとサーバーはREST APIを使ってデータを交換する。
 - 開発環境はEclipseでSpring Tool Suiteをインストールしたもの。
 
+## 機能
+- Customerのインサート、デリート、アップデート、検索。
+- Saleの検索とアップデート。
+- SaleはAsideを開いてアップデートする。
+
 ## 設定
 - src/main/resources/application.propertiesにMySQLへの接続情報を記述する。
 - 接続情報で記述した内容通りにMySQLデータベースのインスタンスとスキーマを作る。
